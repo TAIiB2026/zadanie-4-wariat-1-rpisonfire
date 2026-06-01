@@ -38,6 +38,13 @@ export class RepozytoriumPamiecioweService implements GetDataInterface, FormSubm
     return of(kopia);
   }
 
+  Delete(id: number): Observable<boolean> {
+    const index = this.data.findIndex(x => x.id === id);
+    if (index === -1) return of(false);
+    this.data.splice(index, 1);
+    return of(true);
+  }
+
   GetByID(id: number): Observable<ProduktClass> {
     const obj = this.data.find(x => x.id === id);
     if(obj) {
