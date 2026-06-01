@@ -17,9 +17,9 @@ namespace WebAPI
                 });
             });
 
-            builder.Services.AddSingleton<WebAPI.Services.MemoryRepository>();
-            builder.Services.AddSingleton<WebAPI.Interfaces.GetDataInterface>(sp => sp.GetRequiredService<WebAPI.Services.MemoryRepository>());
-            builder.Services.AddSingleton<WebAPI.Interfaces.FormSubmitInterface>(sp => sp.GetRequiredService<WebAPI.Services.MemoryRepository>());
+            builder.Services.AddSingleton<WebAPI.Services.ProduktyService>();
+            builder.Services.AddSingleton<WebAPI.Interfaces.GetDataInterface>(sp => sp.GetRequiredService<WebAPI.Services.ProduktyService>());
+            builder.Services.AddSingleton<WebAPI.Interfaces.FormSubmitInterface>(sp => sp.GetRequiredService<WebAPI.Services.ProduktyService>());
 
             builder.Services.AddControllers();
             builder.Services.AddEndpointsApiExplorer();

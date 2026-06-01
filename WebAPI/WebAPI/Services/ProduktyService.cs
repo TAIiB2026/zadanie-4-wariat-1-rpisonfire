@@ -3,12 +3,12 @@ using WebAPI.Models;
 
 namespace WebAPI.Services
 {
-    public class MemoryRepository : GetDataInterface, FormSubmitInterface
+    public class ProduktyService : GetDataInterface, FormSubmitInterface
     {
         private int _idGenerator = 1;
         private readonly List<Produkt> _data;
 
-        public MemoryRepository()
+        public ProduktyService()
         {
             _data = new List<Produkt>
             {
